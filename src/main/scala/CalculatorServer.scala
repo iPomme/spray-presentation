@@ -13,6 +13,7 @@ object CalculatorServer extends App {
 
   val mainModule = new CalculatorService {
     implicit def actorSystem = system
+
     // bake your module cake here
   }
 

@@ -1,14 +1,4 @@
 import akka.actor.{Props, ActorSystem}
-import cc.spray.can.client._
-import cc.spray._
-import http._
-import HttpMethods._
-import HttpHeaders._
-import io.IoWorker
-import MediaTypes._
-import StatusCodes._
-
-import akka.actor.{Props, ActorSystem}
 import cc.spray.can.client.{HttpDialog, HttpClient}
 import cc.spray.can.model.HttpRequest
 import cc.spray.can.model.HttpHeader
@@ -35,7 +25,7 @@ object CalculatorClient extends App {
 
   val responseF =
     HttpDialog(httpClient, "localhost", 8080)
-      .send(HttpRequest(uri = "/add/45.1/34", headers = List(HttpHeader("Accept","text/plain"))) )
+      .send(HttpRequest(uri = "/add/45.1/34", headers = List(HttpHeader("Accept", "text/plain"))))
       .end
 
   // "hook in" our continuation

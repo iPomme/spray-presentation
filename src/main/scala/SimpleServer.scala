@@ -88,7 +88,7 @@ class SimpleServer extends Actor with ActorLogging {
             </td>
             </tr>
           </table>
-          <br/>
+            <br/>
           <a href="/">Home</a>
         </body>
       </html>.toString.getBytes("ISO-8859-1")
