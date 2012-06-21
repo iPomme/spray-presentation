@@ -18,11 +18,13 @@ class SimpleServer extends Actor with ActorLogging {
 
     case HttpRequest(GET, "/hello", _, _, _) =>
       sender ! response("hello!")
+
     case HttpRequest(GET, "/stats", _, _, _) =>
       val client = sender
       context.actorFor("../http-server").ask(HttpServer.GetStats)(1.second).onSuccess {
         case x: HttpServer.Stats => client ! statsPresentation(x)
       }
+
     case HttpRequest(GET, "/stop", _, _, _) =>
       sender ! response("Shutting down in 1 second ...")
       context.system.scheduler.scheduleOnce(1.second, new Runnable {
