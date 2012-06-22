@@ -6,6 +6,11 @@
 
     <repositories>
         <repository>
+            <id>typesafe</id>
+            <name>Typesafe Repository</name>
+            <url>http://repo.typesafe.com/typesafe/releases/</url>
+        </repository>
+        <repository>
             <id>Spray</id>
             <url>http://repo.spray.cc/</url>
         </repository>
